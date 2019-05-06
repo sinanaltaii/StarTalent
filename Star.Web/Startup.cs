@@ -2,8 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Star.Data;
 
 namespace Star.Web {
     public class Startup {
@@ -21,6 +23,8 @@ namespace Star.Web {
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var connectionString = Configuration.GetConnectionString("StarDatabase");
+            services.AddDbContext<DataContext>(options => { options.UseSqlServer(connectionString); });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
