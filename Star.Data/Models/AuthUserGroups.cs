@@ -1,12 +1,12 @@
 ﻿namespace Star.Data.Models
 {
-	public partial class AuthUserGroups
+	public class AuthUserGroups
 	{
 		public int Id { get; set; }
 		public int UserId { get; set; }
 		public int GroupId { get; set; }
 
-		public virtual AuthGroup Group { get; set; }
-		public virtual AuthUser User { get; set; }
+		public AuthGroup Group { get; set; }
+		public AuthUser User { get; set; }
 	}
 }

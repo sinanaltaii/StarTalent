@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public partial class AuthPermission
+	public class AuthPermission
 	{
 		public AuthPermission()
 		{
@@ -15,8 +15,7 @@ namespace Star.Data.Models
 		public int ContentTypeId { get; set; }
 		public string Codename { get; set; }
 
-		public virtual DjangoContentType ContentType { get; set; }
-		public virtual ICollection<AuthGroupPermissions> AuthGroupPermissions { get; set; }
-		public virtual ICollection<AuthUserUserPermissions> AuthUserUserPermissions { get; set; }
+		public ICollection<AuthGroupPermissions> AuthGroupPermissions { get; set; }
+		public ICollection<AuthUserUserPermissions> AuthUserUserPermissions { get; set; }
 	}
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
-	public partial class StarEmployee
+	public class StarEmployee
 	{
 		public StarEmployee()
 		{
@@ -26,10 +26,10 @@ namespace Star.Data.Models
 		public int? RoleId { get; set; }
 		public int? TeamId { get; set; }
 
-		public virtual StarGender Gender { get; set; }
-		public virtual StarOffice Office { get; set; }
-		public virtual StarRole Role { get; set; }
-		public virtual StarTeam Team { get; set; }
-		public virtual ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
+		public StarGender Gender { get; set; }
+		public StarOffice Office { get; set; }
+		public StarRole Role { get; set; }
+		public StarTeam Team { get; set; }
+		public ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
 	}
 }

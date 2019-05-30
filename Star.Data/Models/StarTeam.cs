@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public partial class StarTeam
+	public class StarTeam
 	{
 		public StarTeam()
 		{
@@ -13,6 +13,6 @@ namespace Star.Data.Models
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 
-		public virtual ICollection<StarEmployee> StarEmployee { get; set; }
+		public ICollection<StarEmployee> StarEmployee { get; set; }
 	}
 }

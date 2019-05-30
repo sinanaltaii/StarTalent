@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public partial class StarGeneralskill
+	public class StarGeneralskill
 	{
 		public StarGeneralskill()
 		{
@@ -20,7 +20,7 @@ namespace Star.Data.Models
 		public string Description { get; set; }
 		public int? DefaultDescriptionId { get; set; }
 
-		public virtual StarDefaultskillleveldescription DefaultDescription { get; set; }
-		public virtual ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
+		public StarDefaultskillleveldescription DefaultDescription { get; set; }
+		public ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
 	}
 }

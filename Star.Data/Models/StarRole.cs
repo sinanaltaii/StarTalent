@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public partial class StarRole
+	public class StarRole
 	{
 		public StarRole()
 		{
@@ -15,7 +15,7 @@ namespace Star.Data.Models
 		public string Name { get; set; }
 		public string Description { get; set; }
 
-		public virtual ICollection<StarEmployee> StarEmployee { get; set; }
-		public virtual ICollection<StarExpertskill> StarExpertskill { get; set; }
+		public ICollection<StarEmployee> StarEmployee { get; set; }
+		public ICollection<StarExpertskill> StarExpertskill { get; set; }
 	}
 }

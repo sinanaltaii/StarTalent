@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-    public partial class AuthGroup
+    public class AuthGroup
     {
         public AuthGroup()
         {
@@ -13,7 +13,7 @@ namespace Star.Data.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<AuthGroupPermissions> AuthGroupPermissions { get; set; }
-        public virtual ICollection<AuthUserGroups> AuthUserGroups { get; set; }
+        public ICollection<AuthGroupPermissions> AuthGroupPermissions { get; set; }
+        public ICollection<AuthUserGroups> AuthUserGroups { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public partial class StarDefaultskillleveldescription
+	public class StarDefaultskillleveldescription
 	{
 		public StarDefaultskillleveldescription()
 		{

@@ -3,13 +3,12 @@ using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
-	public partial class AuthUser
+	public class AuthUser
 	{
 		public AuthUser()
 		{
 			AuthUserGroups = new HashSet<AuthUserGroups>();
 			AuthUserUserPermissions = new HashSet<AuthUserUserPermissions>();
-			DjangoAdminLog = new HashSet<DjangoAdminLog>();
 		}
 
 		public int Id { get; set; }
@@ -24,8 +23,7 @@ namespace Star.Data.Models
 		public bool IsActive { get; set; }
 		public DateTime DateJoined { get; set; }
 
-		public virtual ICollection<AuthUserGroups> AuthUserGroups { get; set; }
-		public virtual ICollection<AuthUserUserPermissions> AuthUserUserPermissions { get; set; }
-		public virtual ICollection<DjangoAdminLog> DjangoAdminLog { get; set; }
+		public ICollection<AuthUserGroups> AuthUserGroups { get; set; }
+		public ICollection<AuthUserUserPermissions> AuthUserUserPermissions { get; set; }
 	}
 }
