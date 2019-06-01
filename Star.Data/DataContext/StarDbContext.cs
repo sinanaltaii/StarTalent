@@ -30,12 +30,12 @@ namespace Star.Data.DataContext
 		public DbSet<StarSitetext> StarSitetext { get; set; }
 		public DbSet<StarTeam> StarTeam { get; set; }
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			if (!optionsBuilder.IsConfigured)
-			{
-				optionsBuilder.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=!QAZxsw2");
-			}
-		}
+		//protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		//{
+		//	if (!optionsBuilder.IsConfigured)
+		//	{
+		//		optionsBuilder.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=!QAZxsw2");
+		//	}
+		//}
 	}
 }

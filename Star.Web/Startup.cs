@@ -2,9 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-//using Star.Data;
+using Star.Data.DataContext;
 
 namespace Star.Web
 {
@@ -27,9 +28,8 @@ namespace Star.Web
 				options.MinimumSameSitePolicy = SameSiteMode.None;
 			});
 
-			//var connectionString = Configuration.GetConnectionString("StarDatabase");
-			//services.AddDbContext<DataContext>(options => { options.UseSqlServer(connectionString); });
-			//services.AddEntityFrameworkNpgsql().AddDbContext<StrPostGresContext>()
+			var connectionString = Configuration.GetConnectionString("StarDatabase");
+			services.AddDbContext<StarDbContext>(options => { options.UseSqlServer(connectionString); });
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
