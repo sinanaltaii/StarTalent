@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Star.Web", "Star.Web\Star.Web.csproj", "{0EBB4262-9A33-4067-BFC0-0A25E07DE51A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Star.Data", "Star.Data\Star.Data.csproj", "{B50E1B53-F91E-476A-87B7-2EC752673BAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Star.Data", "Star.Data\Star.Data.csproj", "{B50E1B53-F91E-476A-87B7-2EC752673BAB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F5553829-9112-4E57-8F1D-3D75E535612F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0EBB4262-9A33-4067-BFC0-0A25E07DE51A} = {F5553829-9112-4E57-8F1D-3D75E535612F}
+		{B50E1B53-F91E-476A-87B7-2EC752673BAB} = {F5553829-9112-4E57-8F1D-3D75E535612F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F078CA6D-DFA4-492F-91F8-A420FB62F469}
