@@ -2,17 +2,17 @@
 
 namespace Star.Data.Models
 {
-	public class StarOffice
+	public class Office
 	{
-		public StarOffice()
+		public Office()
 		{
-			StarEmployee = new HashSet<StarEmployee>();
+			Employee = new HashSet<Employee>();
 		}
 
 		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 
-		public ICollection<StarEmployee> StarEmployee { get; set; }
+		public ICollection<Employee> Employee { get; set; }
 	}
 }

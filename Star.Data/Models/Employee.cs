@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
-	public class StarEmployee
+	public class Employee
 	{
-		public StarEmployee()
+		public Employee()
 		{
-			StarEmployeeskill = new HashSet<StarEmployeeskill>();
+			Employeeskills = new HashSet<Employeeskill>();
 		}
 
 		public int Id { get; set; }
@@ -26,10 +26,10 @@ namespace Star.Data.Models
 		public int? RoleId { get; set; }
 		public int? TeamId { get; set; }
 
-		public StarGender Gender { get; set; }
-		public StarOffice Office { get; set; }
+		public Gender Gender { get; set; }
+		public Office Office { get; set; }
 		public StarRole Role { get; set; }
-		public StarTeam Team { get; set; }
-		public ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
+		public Team Team { get; set; }
+		public ICollection<Employeeskill> Employeeskills { get; set; }
 	}
 }

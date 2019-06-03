@@ -2,12 +2,12 @@
 
 namespace Star.Data.Models
 {
-	public class StarDefaultskillleveldescription
+	public class Defaultskillleveldescription
 	{
-		public StarDefaultskillleveldescription()
+		public Defaultskillleveldescription()
 		{
-			StarExpertskill = new HashSet<StarExpertskill>();
-			StarGeneralskill = new HashSet<StarGeneralskill>();
+			Expertskills = new HashSet<Expertskill>();
+			Generalskills = new HashSet<Generalskill>();
 		}
 
 		public int Id { get; set; }
@@ -19,7 +19,7 @@ namespace Star.Data.Models
 		public string Percent80 { get; set; }
 		public string Percent100 { get; set; }
 
-		public virtual ICollection<StarExpertskill> StarExpertskill { get; set; }
-		public virtual ICollection<StarGeneralskill> StarGeneralskill { get; set; }
+		public ICollection<Expertskill> Expertskills { get; set; }
+		public ICollection<Generalskill> Generalskills { get; set; }
 	}
 }

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Star.Data.Migrations
 {
-    public partial class Intitial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -59,7 +59,7 @@ namespace Star.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarDefaultskillleveldescription",
+                name: "Defaultskillleveldescription",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -74,11 +74,11 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarDefaultskillleveldescription", x => x.Id);
+                    table.PrimaryKey("PK_Defaultskillleveldescription", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarGender",
+                name: "Gender",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -88,11 +88,11 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarGender", x => x.Id);
+                    table.PrimaryKey("PK_Gender", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarOffice",
+                name: "Office",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -102,7 +102,7 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarOffice", x => x.Id);
+                    table.PrimaryKey("PK_Office", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -138,7 +138,7 @@ namespace Star.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarTeam",
+                name: "Team",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -148,7 +148,7 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarTeam", x => x.Id);
+                    table.PrimaryKey("PK_Team", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -230,7 +230,7 @@ namespace Star.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarGeneralskill",
+                name: "Generalskill",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -247,17 +247,17 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarGeneralskill", x => x.Id);
+                    table.PrimaryKey("PK_Generalskill", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StarGeneralskill_StarDefaultskillleveldescription_DefaultDescriptionId",
+                        name: "FK_Generalskill_Defaultskillleveldescription_DefaultDescriptionId",
                         column: x => x.DefaultDescriptionId,
-                        principalTable: "StarDefaultskillleveldescription",
+                        principalTable: "Defaultskillleveldescription",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarExpertskill",
+                name: "Expertskill",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -275,15 +275,15 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarExpertskill", x => x.Id);
+                    table.PrimaryKey("PK_Expertskill", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StarExpertskill_StarDefaultskillleveldescription_DefaultDescriptionId",
+                        name: "FK_Expertskill_Defaultskillleveldescription_DefaultDescriptionId",
                         column: x => x.DefaultDescriptionId,
-                        principalTable: "StarDefaultskillleveldescription",
+                        principalTable: "Defaultskillleveldescription",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarExpertskill_StarRole_RoleId",
+                        name: "FK_Expertskill_StarRole_RoleId",
                         column: x => x.RoleId,
                         principalTable: "StarRole",
                         principalColumn: "Id",
@@ -291,7 +291,7 @@ namespace Star.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarEmployee",
+                name: "Employee",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -313,35 +313,35 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarEmployee", x => x.Id);
+                    table.PrimaryKey("PK_Employee", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StarEmployee_StarGender_GenderId",
+                        name: "FK_Employee_Gender_GenderId",
                         column: x => x.GenderId,
-                        principalTable: "StarGender",
+                        principalTable: "Gender",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarEmployee_StarOffice_OfficeId",
+                        name: "FK_Employee_Office_OfficeId",
                         column: x => x.OfficeId,
-                        principalTable: "StarOffice",
+                        principalTable: "Office",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarEmployee_StarRole_RoleId",
+                        name: "FK_Employee_StarRole_RoleId",
                         column: x => x.RoleId,
                         principalTable: "StarRole",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarEmployee_StarTeam_TeamId",
+                        name: "FK_Employee_Team_TeamId",
                         column: x => x.TeamId,
-                        principalTable: "StarTeam",
+                        principalTable: "Team",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "StarEmployeeskill",
+                name: "Employeeskill",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -354,23 +354,23 @@ namespace Star.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_StarEmployeeskill", x => x.Id);
+                    table.PrimaryKey("PK_Employeeskill", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_StarEmployeeskill_StarEmployee_EmployeeId",
+                        name: "FK_Employeeskill_Employee_EmployeeId",
                         column: x => x.EmployeeId,
-                        principalTable: "StarEmployee",
+                        principalTable: "Employee",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarEmployeeskill_StarExpertskill_ExpertSkillId",
+                        name: "FK_Employeeskill_Expertskill_ExpertSkillId",
                         column: x => x.ExpertSkillId,
-                        principalTable: "StarExpertskill",
+                        principalTable: "Expertskill",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_StarEmployeeskill_StarGeneralskill_GeneralSkillId",
+                        name: "FK_Employeeskill_Generalskill_GeneralSkillId",
                         column: x => x.GeneralSkillId,
-                        principalTable: "StarGeneralskill",
+                        principalTable: "Generalskill",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -406,53 +406,53 @@ namespace Star.Data.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployee_GenderId",
-                table: "StarEmployee",
+                name: "IX_Employee_GenderId",
+                table: "Employee",
                 column: "GenderId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployee_OfficeId",
-                table: "StarEmployee",
+                name: "IX_Employee_OfficeId",
+                table: "Employee",
                 column: "OfficeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployee_RoleId",
-                table: "StarEmployee",
+                name: "IX_Employee_RoleId",
+                table: "Employee",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployee_TeamId",
-                table: "StarEmployee",
+                name: "IX_Employee_TeamId",
+                table: "Employee",
                 column: "TeamId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployeeskill_EmployeeId",
-                table: "StarEmployeeskill",
+                name: "IX_Employeeskill_EmployeeId",
+                table: "Employeeskill",
                 column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployeeskill_ExpertSkillId",
-                table: "StarEmployeeskill",
+                name: "IX_Employeeskill_ExpertSkillId",
+                table: "Employeeskill",
                 column: "ExpertSkillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarEmployeeskill_GeneralSkillId",
-                table: "StarEmployeeskill",
+                name: "IX_Employeeskill_GeneralSkillId",
+                table: "Employeeskill",
                 column: "GeneralSkillId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarExpertskill_DefaultDescriptionId",
-                table: "StarExpertskill",
+                name: "IX_Expertskill_DefaultDescriptionId",
+                table: "Expertskill",
                 column: "DefaultDescriptionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarExpertskill_RoleId",
-                table: "StarExpertskill",
+                name: "IX_Expertskill_RoleId",
+                table: "Expertskill",
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_StarGeneralskill_DefaultDescriptionId",
-                table: "StarGeneralskill",
+                name: "IX_Generalskill_DefaultDescriptionId",
+                table: "Generalskill",
                 column: "DefaultDescriptionId");
         }
 
@@ -468,7 +468,7 @@ namespace Star.Data.Migrations
                 name: "AuthUserUserPermissions");
 
             migrationBuilder.DropTable(
-                name: "StarEmployeeskill");
+                name: "Employeeskill");
 
             migrationBuilder.DropTable(
                 name: "StarSitetext");
@@ -483,28 +483,28 @@ namespace Star.Data.Migrations
                 name: "AuthUser");
 
             migrationBuilder.DropTable(
-                name: "StarEmployee");
+                name: "Employee");
 
             migrationBuilder.DropTable(
-                name: "StarExpertskill");
+                name: "Expertskill");
 
             migrationBuilder.DropTable(
-                name: "StarGeneralskill");
+                name: "Generalskill");
 
             migrationBuilder.DropTable(
-                name: "StarGender");
+                name: "Gender");
 
             migrationBuilder.DropTable(
-                name: "StarOffice");
+                name: "Office");
 
             migrationBuilder.DropTable(
-                name: "StarTeam");
+                name: "Team");
 
             migrationBuilder.DropTable(
                 name: "StarRole");
 
             migrationBuilder.DropTable(
-                name: "StarDefaultskillleveldescription");
+                name: "Defaultskillleveldescription");
         }
     }
 }

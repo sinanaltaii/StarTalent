@@ -137,7 +137,7 @@ namespace Star.Data.Migrations
                     b.ToTable("AuthUserUserPermissions");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarDefaultskillleveldescription", b =>
+            modelBuilder.Entity("Star.Data.Models.Defaultskillleveldescription", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -159,10 +159,10 @@ namespace Star.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StarDefaultskillleveldescription");
+                    b.ToTable("Defaultskillleveldescription");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarEmployee", b =>
+            modelBuilder.Entity("Star.Data.Models.Employee", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -206,10 +206,10 @@ namespace Star.Data.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("StarEmployee");
+                    b.ToTable("Employee");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarEmployeeskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Employeeskill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -233,10 +233,10 @@ namespace Star.Data.Migrations
 
                     b.HasIndex("GeneralSkillId");
 
-                    b.ToTable("StarEmployeeskill");
+                    b.ToTable("Employeeskill");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarExpertskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Expertskill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -268,10 +268,10 @@ namespace Star.Data.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("StarExpertskill");
+                    b.ToTable("Expertskill");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarGender", b =>
+            modelBuilder.Entity("Star.Data.Models.Gender", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -283,10 +283,10 @@ namespace Star.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StarGender");
+                    b.ToTable("Gender");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarGeneralskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Generalskill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -314,10 +314,10 @@ namespace Star.Data.Migrations
 
                     b.HasIndex("DefaultDescriptionId");
 
-                    b.ToTable("StarGeneralskill");
+                    b.ToTable("Generalskill");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarOffice", b =>
+            modelBuilder.Entity("Star.Data.Models.Office", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -329,27 +329,10 @@ namespace Star.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StarOffice");
+                    b.ToTable("Office");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarRole", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ContentfulId");
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("StarRole");
-                });
-
-            modelBuilder.Entity("Star.Data.Models.StarSitetext", b =>
+            modelBuilder.Entity("Star.Data.Models.Sitetext", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -370,7 +353,24 @@ namespace Star.Data.Migrations
                     b.ToTable("StarSitetext");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarTeam", b =>
+            modelBuilder.Entity("Star.Data.Models.StarRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ContentfulId");
+
+                    b.Property<string>("Description");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("StarRole");
+                });
+
+            modelBuilder.Entity("Star.Data.Models.Team", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -382,7 +382,7 @@ namespace Star.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("StarTeam");
+                    b.ToTable("Team");
                 });
 
             modelBuilder.Entity("Star.Data.Models.AuthGroupPermissions", b =>
@@ -424,55 +424,55 @@ namespace Star.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarEmployee", b =>
+            modelBuilder.Entity("Star.Data.Models.Employee", b =>
                 {
-                    b.HasOne("Star.Data.Models.StarGender", "Gender")
-                        .WithMany("StarEmployee")
+                    b.HasOne("Star.Data.Models.Gender", "Gender")
+                        .WithMany("Employees")
                         .HasForeignKey("GenderId");
 
-                    b.HasOne("Star.Data.Models.StarOffice", "Office")
-                        .WithMany("StarEmployee")
+                    b.HasOne("Star.Data.Models.Office", "Office")
+                        .WithMany("Employee")
                         .HasForeignKey("OfficeId");
 
                     b.HasOne("Star.Data.Models.StarRole", "Role")
-                        .WithMany("StarEmployee")
+                        .WithMany("Employees")
                         .HasForeignKey("RoleId");
 
-                    b.HasOne("Star.Data.Models.StarTeam", "Team")
-                        .WithMany("StarEmployee")
+                    b.HasOne("Star.Data.Models.Team", "Team")
+                        .WithMany("Employees")
                         .HasForeignKey("TeamId");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarEmployeeskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Employeeskill", b =>
                 {
-                    b.HasOne("Star.Data.Models.StarEmployee", "Employee")
-                        .WithMany("StarEmployeeskill")
+                    b.HasOne("Star.Data.Models.Employee", "Employee")
+                        .WithMany("Employeeskills")
                         .HasForeignKey("EmployeeId");
 
-                    b.HasOne("Star.Data.Models.StarExpertskill", "ExpertSkill")
-                        .WithMany("StarEmployeeskill")
+                    b.HasOne("Star.Data.Models.Expertskill", "ExpertSkill")
+                        .WithMany("Employeeskills")
                         .HasForeignKey("ExpertSkillId");
 
-                    b.HasOne("Star.Data.Models.StarGeneralskill", "GeneralSkill")
-                        .WithMany("StarEmployeeskill")
+                    b.HasOne("Star.Data.Models.Generalskill", "GeneralSkill")
+                        .WithMany("Employeeskills")
                         .HasForeignKey("GeneralSkillId");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarExpertskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Expertskill", b =>
                 {
-                    b.HasOne("Star.Data.Models.StarDefaultskillleveldescription", "DefaultDescription")
-                        .WithMany("StarExpertskill")
+                    b.HasOne("Star.Data.Models.Defaultskillleveldescription", "DefaultDescription")
+                        .WithMany("Expertskills")
                         .HasForeignKey("DefaultDescriptionId");
 
                     b.HasOne("Star.Data.Models.StarRole", "Role")
-                        .WithMany("StarExpertskill")
+                        .WithMany("Expertskills")
                         .HasForeignKey("RoleId");
                 });
 
-            modelBuilder.Entity("Star.Data.Models.StarGeneralskill", b =>
+            modelBuilder.Entity("Star.Data.Models.Generalskill", b =>
                 {
-                    b.HasOne("Star.Data.Models.StarDefaultskillleveldescription", "DefaultDescription")
-                        .WithMany("StarGeneralskill")
+                    b.HasOne("Star.Data.Models.Defaultskillleveldescription", "DefaultDescription")
+                        .WithMany("Generalskills")
                         .HasForeignKey("DefaultDescriptionId");
                 });
 #pragma warning restore 612, 618

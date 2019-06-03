@@ -2,11 +2,11 @@
 
 namespace Star.Data.Models
 {
-	public class StarExpertskill
+	public class Expertskill
 	{
-		public StarExpertskill()
+		public Expertskill()
 		{
-			StarEmployeeskill = new HashSet<StarEmployeeskill>();
+			Employeeskills = new HashSet<Employeeskill>();
 		}
 
 		public int Id { get; set; }
@@ -21,8 +21,8 @@ namespace Star.Data.Models
 		public int? DefaultDescriptionId { get; set; }
 		public int? RoleId { get; set; }
 
-		public StarDefaultskillleveldescription DefaultDescription { get; set; }
+		public Defaultskillleveldescription DefaultDescription { get; set; }
 		public StarRole Role { get; set; }
-		public ICollection<StarEmployeeskill> StarEmployeeskill { get; set; }
+		public ICollection<Employeeskill> Employeeskills { get; set; }
 	}
 }

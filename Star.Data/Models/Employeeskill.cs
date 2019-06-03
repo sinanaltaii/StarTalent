@@ -1,6 +1,6 @@
 ﻿namespace Star.Data.Models
 {
-	public class StarEmployeeskill
+	public class Employeeskill
 	{
 		public int Id { get; set; }
 		public int? Current { get; set; }
@@ -9,8 +9,8 @@
 		public int? ExpertSkillId { get; set; }
 		public int? GeneralSkillId { get; set; }
 
-		public StarEmployee Employee { get; set; }
-		public StarExpertskill ExpertSkill { get; set; }
-		public StarGeneralskill GeneralSkill { get; set; }
+		public Employee Employee { get; set; }
+		public Expertskill ExpertSkill { get; set; }
+		public Generalskill GeneralSkill { get; set; }
 	}
 }

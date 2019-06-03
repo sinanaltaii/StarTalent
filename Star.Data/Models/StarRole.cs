@@ -6,8 +6,8 @@ namespace Star.Data.Models
 	{
 		public StarRole()
 		{
-			StarEmployee = new HashSet<StarEmployee>();
-			StarExpertskill = new HashSet<StarExpertskill>();
+			Employees = new HashSet<Employee>();
+			Expertskills = new HashSet<Expertskill>();
 		}
 
 		public int Id { get; set; }
@@ -15,7 +15,7 @@ namespace Star.Data.Models
 		public string Name { get; set; }
 		public string Description { get; set; }
 
-		public ICollection<StarEmployee> StarEmployee { get; set; }
-		public ICollection<StarExpertskill> StarExpertskill { get; set; }
+		public ICollection<Employee> Employees { get; set; }
+		public ICollection<Expertskill> Expertskills { get; set; }
 	}
 }
