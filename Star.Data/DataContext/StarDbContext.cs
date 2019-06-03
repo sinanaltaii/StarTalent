@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Runtime.Serialization;
+using Microsoft.EntityFrameworkCore;
 using Star.Data.Models;
 
 namespace Star.Data.DataContext
 {
-	public class StarDbContext : DbContext
+	public class
+		StarDbContext : DbContext
 	{
 		public StarDbContext()
 		{
