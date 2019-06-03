@@ -1,6 +1,6 @@
 ﻿namespace Star.Data.Models
 {
-	public class StarSitetext
+	public class Sitetext
 	{
 		public int Id { get; set; }
 		public string ContentfulId { get; set; }

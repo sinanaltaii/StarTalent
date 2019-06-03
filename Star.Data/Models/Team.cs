@@ -2,17 +2,17 @@
 
 namespace Star.Data.Models
 {
-	public class StarTeam
+	public class Team
 	{
-		public StarTeam()
+		public Team()
 		{
-			StarEmployee = new HashSet<StarEmployee>();
+			Employees = new HashSet<Employee>();
 		}
 
 		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 
-		public ICollection<StarEmployee> StarEmployee { get; set; }
+		public ICollection<Employee> Employees { get; set; }
 	}
 }
