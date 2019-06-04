@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Star.Data.DataContext;
+using Star.Web.Features.Office;
 
 namespace Star.Web
 {
@@ -30,6 +31,7 @@ namespace Star.Web
 
 			var connectionString = Configuration.GetConnectionString("StarDatabase");
 			services.AddDbContext<StarDbContext>(options => { options.UseSqlServer(connectionString); });
+			services.AddScoped<IOfficeViewModelFactory, OfficeViewModelFactory>();
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}

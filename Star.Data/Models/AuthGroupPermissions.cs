@@ -1,8 +1,7 @@
 ﻿namespace Star.Data.Models
 {
-	public class AuthGroupPermissions
+	public class AuthGroupPermissions : BaseModel
 	{
-		public int Id { get; set; }
 		public int GroupId { get; set; }
 		public int PermissionId { get; set; }
 

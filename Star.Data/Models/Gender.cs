@@ -2,14 +2,13 @@
 
 namespace Star.Data.Models
 {
-	public class Gender
+	public class Gender : BaseModel
 	{
-		public Gender()
+		public Gender() 
 		{
 			Employees = new HashSet<Employee>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 

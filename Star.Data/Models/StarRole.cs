@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public class StarRole
+	public class StarRole : BaseModel
 	{
 		public StarRole()
 		{
@@ -10,7 +10,6 @@ namespace Star.Data.Models
 			Expertskills = new HashSet<Expertskill>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 		public string Description { get; set; }

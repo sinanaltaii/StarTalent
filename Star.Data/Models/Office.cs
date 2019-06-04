@@ -2,14 +2,13 @@
 
 namespace Star.Data.Models
 {
-	public class Office
+	public class Office : BaseModel
 	{
 		public Office()
 		{
 			Employee = new HashSet<Employee>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 

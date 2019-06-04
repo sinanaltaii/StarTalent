@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public class AuthPermission
+	public class AuthPermission : BaseModel
 	{
 		public AuthPermission()
 		{
@@ -10,7 +10,6 @@ namespace Star.Data.Models
 			AuthUserUserPermissions = new HashSet<AuthUserUserPermissions>();
 		}
 
-		public int Id { get; set; }
 		public string Name { get; set; }
 		public int ContentTypeId { get; set; }
 		public string Codename { get; set; }

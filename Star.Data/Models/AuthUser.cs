@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
-	public class AuthUser
+	public class AuthUser : BaseModel
 	{
 		public AuthUser()
 		{
@@ -11,7 +11,6 @@ namespace Star.Data.Models
 			AuthUserUserPermissions = new HashSet<AuthUserUserPermissions>();
 		}
 
-		public int Id { get; set; }
 		public string Password { get; set; }
 		public DateTime? LastLogin { get; set; }
 		public bool IsSuperuser { get; set; }

@@ -1,8 +1,7 @@
 ﻿namespace Star.Data.Models
 {
-	public class Sitetext
+	public class Sitetext : BaseModel
 	{
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 		public string LandingPageHeading { get; set; }

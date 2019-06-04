@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public class AuthGroup
+	public class AuthGroup : BaseModel
 	{
 		public AuthGroup()
 		{
@@ -10,7 +10,6 @@ namespace Star.Data.Models
 			AuthUserGroups = new HashSet<AuthUserGroups>();
 		}
 
-		public int Id { get; set; }
 		public string Name { get; set; }
 
 		public ICollection<AuthGroupPermissions> AuthGroupPermissions { get; set; }

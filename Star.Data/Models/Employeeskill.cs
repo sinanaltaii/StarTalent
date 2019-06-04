@@ -1,8 +1,7 @@
 ﻿namespace Star.Data.Models
 {
-	public class Employeeskill
+	public class Employeeskill : BaseModel
 	{
-		public int Id { get; set; }
 		public int? Current { get; set; }
 		public int? Future { get; set; }
 		public int? EmployeeId { get; set; }

@@ -2,14 +2,13 @@
 
 namespace Star.Data.Models
 {
-	public class Expertskill
+	public class Expertskill : BaseModel
 	{
 		public Expertskill()
 		{
 			Employeeskills = new HashSet<Employeeskill>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 		public string Percent20 { get; set; }

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
-	public class Employee
+	public class Employee : BaseModel
 	{
 		public Employee()
 		{
 			Employeeskills = new HashSet<Employeeskill>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 		public string Username { get; set; }

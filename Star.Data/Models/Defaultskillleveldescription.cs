@@ -2,7 +2,7 @@
 
 namespace Star.Data.Models
 {
-	public class Defaultskillleveldescription
+	public class Defaultskillleveldescription : BaseModel
 	{
 		public Defaultskillleveldescription()
 		{
@@ -10,7 +10,6 @@ namespace Star.Data.Models
 			Generalskills = new HashSet<Generalskill>();
 		}
 
-		public int Id { get; set; }
 		public string ContentfulId { get; set; }
 		public string Name { get; set; }
 		public string Percent20 { get; set; }
