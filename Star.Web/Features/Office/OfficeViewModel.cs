@@ -1,20 +1,21 @@
-﻿using System.Collections.Generic;
-using Star.Data.Models;
+﻿using Star.Web.Features.Employee;
+using System.Collections.Generic;
+
 
 namespace Star.Web.Features.Office
 {
-	public class OfficeViewModel : Data.Models.Office
+	public class OfficeViewModel
 	{
-		//public OfficeViewModel()
-		//{
-		//	Employees = new HashSet<Employee>();
-		//}
+		public OfficeViewModel()
+		{
+			Employees = new HashSet<EmployeeViewModel>();
+		}
 
-		//public int Id { get; set; }
-		//public string ContentfulId { get; set; }
-		//public string Name { get; set; }
+		public int Id { get; set; }
+		public string ContentfulId { get; set; }
+		public string Name { get; set; }
 
-		//public ICollection<Employee> Employees { get; set; }
+		public ICollection<EmployeeViewModel> Employees { get; set; }
 
 	}
 }

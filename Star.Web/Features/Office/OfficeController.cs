@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Star.Data.DataContext;
+using Star.Service.OfficeUoW;
 
 namespace Star.Web.Features.Office
 {
 	public class OfficeController : Controller
 	{
-		private readonly StarDbContext _context;
-		private readonly IOfficeViewModelFactory _factory;
-		public OfficeController(StarDbContext context, IOfficeViewModelFactory factory)
+		private readonly IOfficeUoW _service;
+		private readonly IOfficeViewModelFactory _viewModelFactory;
+
+		public OfficeController(IMapper mapper, IOfficeUoW service, IOfficeViewModelFactory factory)
 		{
-			_context = context ?? throw new ArgumentNullException(nameof(context));
-			_factory = factory ?? throw new ArgumentNullException(nameof(factory));
+			_service = service ?? throw new ArgumentNullException(nameof(service));
+			_viewModelFactory = factory ?? throw new ArgumentNullException(nameof(factory));
 		}
 
 		public async Task<IActionResult> Index()
 		{
-			var offices = await _context.Office.ToListAsync();
-			var viewModel = _factory.Create(offices);
+			var offices = await _service.GetAllAsync();
+			var viewModel = _viewModelFactory.Create(offices);
 			return View(viewModel);
 		}
 
@@ -33,8 +34,6 @@ namespace Star.Web.Features.Office
 		{
 			if (ModelState.IsValid && !string.IsNullOrWhiteSpace(viewModel.Name))
 			{
-				
-
 			}
 
 			return View(viewModel);

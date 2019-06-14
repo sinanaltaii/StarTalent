@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Star.Data.Models;
+using Star.Service.GenderUoW;
+using Star.Service.OfficeUoW;
 
-namespace Star.Data.Models
+namespace Star.Service.EmployeeUoW
 {
-	public class Employee : BaseModel
+	public class EmployeeModel
 	{
-		public Employee()
+		public EmployeeModel()
 		{
 			Employeeskills = new HashSet<Employeeskill>();
 		}
@@ -25,9 +28,10 @@ namespace Star.Data.Models
 		public int? RoleId { get; set; }
 		public int? TeamId { get; set; }
 
-		public Gender Gender { get; set; }
-		public Office Office { get; set; }
+		public GenderModel Gender { get; set; }
+		public OfficeModel Office { get; set; }
 		public StarRole Role { get; set; }
+
 		public ICollection<Employeeskill> Employeeskills { get; set; }
 	}
 }

@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Star.Data.Models;
 
 namespace Star.Data.DataContext
@@ -30,6 +29,5 @@ namespace Star.Data.DataContext
 		public DbSet<Office> Office { get; set; }
 		public DbSet<StarRole> StarRole { get; set; }
 		public DbSet<Sitetext> StarSitetext { get; set; }
-		public DbSet<Team> Team { get; set; }
 	}
 }

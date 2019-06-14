@@ -1,13 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Star.Web</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Star Home</title>
+  <link type="text/css" rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-<div class="container">
-	@RenderBody()
-</div>
+  <nav>
+    <ul>
+      <li><a asp-controller="Home" asp-action="Index">Creuna Star</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Admin</a>
+        <div class="dropdown-content">
+          <a asp-controller="Office" asp-action="Index">Office</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div>
+    @RenderBody()
+  </div>
 </body>
 </html>
