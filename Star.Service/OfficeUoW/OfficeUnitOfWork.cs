@@ -8,12 +8,12 @@ using Star.Service.EmployeeUoW;
 
 namespace Star.Service.OfficeUoW
 {
-	public class OfficeUoW : IOfficeUoW
+	public class OfficeUnitOfWork : IOfficeUnitOfWork
 	{
 		private readonly IMapper _mapper;
 		private readonly OfficeRepository _repository;
 
-		public OfficeUoW(IMapper mapper, OfficeRepository repository)
+		public OfficeUnitOfWork(IMapper mapper, OfficeRepository repository)
 		{
 			_mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
 			_repository = repository ?? throw new ArgumentNullException(nameof(repository));
@@ -38,6 +38,12 @@ namespace Star.Service.OfficeUoW
 			};
 
 			return officeModel;
+		}
+
+		public async Task InsertAsync(OfficeModel officeModel)
+		{
+			var domainModel = _mapper.Map<OfficeModel, Office>(officeModel);
+			await _repository.InsertAsync(domainModel);
 		}
 	}
 }

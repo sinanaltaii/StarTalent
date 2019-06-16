@@ -11,8 +11,9 @@ namespace Star.Web.Features.Office
 			Employees = new HashSet<EmployeeViewModel>();
 		}
 
-		public int Id { get; set; }
-		public string ContentfulId { get; set; }
+		// TODO: is the id needed for this view model?
+		//public int Id { get; }
+		//public string ContentfulId { get; }
 		public string Name { get; set; }
 
 		public ICollection<EmployeeViewModel> Employees { get; set; }

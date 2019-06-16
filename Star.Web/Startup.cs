@@ -37,10 +37,10 @@ namespace Star.Web
 			services.AddDbContext<StarDbContext>(options => { options.UseSqlServer(connectionString); });
 
 			services.AddScoped<OfficeRepository>();
-			services.AddScoped<IOfficeUoW, OfficeUoW>();
+			services.AddScoped<IOfficeUnitOfWork, OfficeUnitOfWork>();
 			services.AddScoped<IOfficeViewModelFactory, OfficeViewModelFactory>();
 
-			services.AddAutoMapper(LoadAssembliesForAutoMapper());
+			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
 

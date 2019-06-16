@@ -29,5 +29,11 @@ namespace Star.Data.DataContext
 		public DbSet<Office> Office { get; set; }
 		public DbSet<StarRole> StarRole { get; set; }
 		public DbSet<Sitetext> StarSitetext { get; set; }
+
+		//protected override void OnModelCreating(ModelBuilder modelBuilder)
+		//{
+		//	base.OnModelCreating(modelBuilder);
+		//	modelBuilder.Entity<Office>().Property(p => p.ContentfulId).ValueGeneratedOnAdd();
+		//}
 	}
 }

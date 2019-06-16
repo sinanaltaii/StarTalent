@@ -1,0 +1,30 @@
+﻿@model Star.Web.Features.Office.OfficeViewModel
+
+@{
+    ViewData["Title"] = "Add office";
+}
+
+<h1>Create</h1>
+
+<h4>OfficeViewModel</h4>
+<hr />
+<div>
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <input type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

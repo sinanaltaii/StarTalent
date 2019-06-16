@@ -8,18 +8,20 @@ namespace Star.Web.Features.Office
 {
 	public class OfficeController : Controller
 	{
-		private readonly IOfficeUoW _service;
+		private readonly IOfficeUnitOfWork _officeUoW;
 		private readonly IOfficeViewModelFactory _viewModelFactory;
+		private readonly IMapper _mapper;
 
-		public OfficeController(IMapper mapper, IOfficeUoW service, IOfficeViewModelFactory factory)
+		public OfficeController(IMapper mapper, IOfficeUnitOfWork service, IOfficeViewModelFactory factory)
 		{
-			_service = service ?? throw new ArgumentNullException(nameof(service));
+			_officeUoW = service ?? throw new ArgumentNullException(nameof(service));
 			_viewModelFactory = factory ?? throw new ArgumentNullException(nameof(factory));
+			_mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
 		}
 
 		public async Task<IActionResult> Index()
 		{
-			var offices = await _service.GetAllAsync();
+			var offices = await _officeUoW.GetAllAsync();
 			var viewModel = _viewModelFactory.Create(offices);
 			return View(viewModel);
 		}
@@ -34,6 +36,9 @@ namespace Star.Web.Features.Office
 		{
 			if (ModelState.IsValid && !string.IsNullOrWhiteSpace(viewModel.Name))
 			{
+				var model = _mapper.Map<OfficeViewModel, OfficeModel>(viewModel);
+				await _officeUoW.InsertAsync(model);
+				return RedirectToAction(nameof(Index));
 			}
 
 			return View(viewModel);

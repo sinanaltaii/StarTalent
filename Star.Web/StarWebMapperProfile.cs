@@ -9,6 +9,7 @@ namespace Star.Web
 		public StarWebMapperProfile()
 		{
 			CreateMap<OfficeModel, OfficeViewModel>();
+			CreateMap<OfficeViewModel, OfficeModel>();
 		}
 	}
 }

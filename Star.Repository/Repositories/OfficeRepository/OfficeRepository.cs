@@ -24,10 +24,10 @@ namespace Star.Repository.Repositories.OfficeRepository
 			//TODO: automapper here to map employeemodel  to employee
 			await _context.Office.AddAsync(new Office
 			{
-				ContentfulId = model.ContentfulId,
 				Name = model.Name,
-				Employee = new List<Employee>()
 			});
+
+			await _context.SaveChangesAsync();
 		}
 	}
 }
