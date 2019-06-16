@@ -8,6 +8,18 @@ namespace Star.Service
 	{
 		public StarServiceMappingProfile()
 		{
+			MapToOfficeDomain();
+			MapToOfficeModel();
+		}
+
+		private void MapToOfficeModel()
+		{
+			CreateMap<Office, OfficeModel>()
+				.ForMember(m => m.ContentfulId, opt => opt.MapFrom(src => src.ContentfulId));
+		}
+
+		private void MapToOfficeDomain()
+		{
 			CreateMap<OfficeModel, Office>();
 		}
 	}

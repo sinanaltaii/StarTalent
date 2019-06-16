@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Star.Data.DataContext;
 
 namespace Star.Data.Migrations
 {
     [DbContext(typeof(StarDbContext))]
-    partial class StarDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190616170602_ConvertedContentfulPropertyFromStringToGuidAndUnique")]
+    partial class ConvertedContentfulPropertyFromStringToGuidAndUnique
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -322,8 +324,7 @@ namespace Star.Data.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<Guid>("ContentfulId")
-                        .ValueGeneratedOnAdd()
-                        .HasDefaultValueSql("NEWID()");
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 

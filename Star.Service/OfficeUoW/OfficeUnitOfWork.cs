@@ -40,6 +40,13 @@ namespace Star.Service.OfficeUoW
 			return officeModel;
 		}
 
+		public async Task<OfficeModel> GetByContentIdAsync(Guid contentId)
+		{
+			var entity = await _repository.GetByContentIdAsync(contentId);
+			var officeModel = _mapper.Map<OfficeModel>(entity);
+			return officeModel;
+		}
+
 		public async Task InsertAsync(OfficeModel officeModel)
 		{
 			var domainModel = _mapper.Map<OfficeModel, Office>(officeModel);

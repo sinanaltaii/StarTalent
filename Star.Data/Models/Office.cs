@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Star.Data.Models
 {
@@ -10,8 +10,7 @@ namespace Star.Data.Models
 			Employee = new HashSet<Employee>();
 		}
 
-		//[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-		public string ContentfulId { get; set; }
+		public Guid ContentfulId { get; set; }
 		public string Name { get; set; }
 
 		public ICollection<Employee> Employee { get; set; }

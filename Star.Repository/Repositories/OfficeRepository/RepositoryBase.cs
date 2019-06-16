@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Star.Data.Models;
 
@@ -8,6 +9,7 @@ namespace Star.Repository.Repositories.OfficeRepository
 	{
 		public abstract Task<IEnumerable<T>> GetAllAsync();
 		public abstract Task<T> GetByIdAsync(int id);
+		public abstract Task<T> GetByContentIdAsync(Guid contentId);
 		public abstract Task InsertAsync(T model);
 	}
 }

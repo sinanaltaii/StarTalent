@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Star.Service.OfficeUoW
@@ -7,6 +8,7 @@ namespace Star.Service.OfficeUoW
 	{
 		Task<IEnumerable<OfficeModel>> GetAllAsync();
 		Task<OfficeModel> GetbyIdAsync(int id);
+		Task<OfficeModel> GetByContentIdAsync(Guid contentId);
 		Task InsertAsync(OfficeModel officeModel);
 	}
 }

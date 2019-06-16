@@ -43,5 +43,23 @@ namespace Star.Web.Features.Office
 
 			return View(viewModel);
 		}
+
+		public IActionResult Edit()
+		{
+			return View();
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Edit([Bind("Name")] OfficeViewModel viewModel, Guid contentId)
+		{
+
+			if (!string.IsNullOrWhiteSpace(viewModel.Name) && contentId != Guid.Empty)
+			{
+				var model = await _officeUoW.GetByContentIdAsync(contentId);
+				return RedirectToAction(nameof(Index));
+			}
+
+			return View(viewModel);
+		}
 	}
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Star.Service.EmployeeUoW;
 
 namespace Star.Service.OfficeUoW
@@ -11,7 +12,7 @@ namespace Star.Service.OfficeUoW
 		}
 
 		public int Id { get; set; }
-		public string ContentfulId { get; set; }
+		public Guid ContentfulId { get; set; }
 		public string Name { get; set; }
 
 		public ICollection<EmployeeModel> Employees { get; set; }

@@ -16,6 +16,9 @@ Update-Database 0
 2. Remove all migrations by running command below, giving no argument will remove 
    the latest migration and its corrosponding files
 ```Package Manager Console
-Remove-Migration
+Remove-Migration -Project src\Star.Data
 ```
+
+Note:
+USE Add-Migration when adding code to `OnModelCreating()` in order to get that code to the database.
 
