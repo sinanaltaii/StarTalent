@@ -41,6 +41,7 @@ namespace Star.Web
 			services.AddScoped<IOfficeViewModelFactory, OfficeViewModelFactory>();
 
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+			//services.AddAutoMapper(LoadAssembliesForAutoMapper());
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 		}
 

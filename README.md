@@ -1,4 +1,4 @@
-## Genereate hexagondb Postgressql with EF Core
+## Genereate Postgressql db with EF Core
 
 * Remove Sql provider
 * Install Postgres provider 

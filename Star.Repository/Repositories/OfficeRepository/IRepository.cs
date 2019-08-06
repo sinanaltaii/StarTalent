@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Star.Repository.Repositories
+namespace Star.Repository.Repositories.OfficeRepository
 {
 	public interface IRepository<T>
 	{
