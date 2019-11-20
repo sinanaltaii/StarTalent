@@ -3,7 +3,7 @@
 * Remove Sql provider
 * Install Postgres provider 
 ```Package Manager Console
-Scaffold-DbContext "Host=localhost;Database=postgres;Username=postgres;Password=!QAZxsw2" -Provider Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -Context StarDbContext -ContextDir DataContext
+Scaffold-DbContext "Host=localhost;Database=postgres;Username=postgres;Password=<password>" -Provider Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models -Context StarDbContext -ContextDir DataContext
 ```
 
 ## Remove all migrations including initial_create
